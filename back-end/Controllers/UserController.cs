@@ -22,16 +22,7 @@ namespace back_end.Controllers
         [HttpGet]
         public IEnumerable<Usuario> Get()
         {
-            var data = _userReposotory.Query().Select(x => new Usuario
-            {
-                Name = x.Name,
-                LastName = x.LastName,
-                Email = x.Email,
-                Telephone = x.Telephone,
-                Country = x.Country,
-                GetInformation = x.GetInformation,
-                BirthDate = x.BirthDate                
-            }).ToList();
+            var data = _userReposotory.Query().ToList();
 
             return data;
         }
